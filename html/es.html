@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单行文本垂直居中</title>
+	<script type="text/javascript" src="es.js"></script>
+</head>
+<style>
+	.d1,.d2,.d3{
+		border: 1px solid black;	
+		text-align: center;
+		width: 100px;
+		margin-bottom: 20px;	
+	}
+	/*第一种方法 利用vertical-align属性，在元素的外层再包一层，父元素设置display: table;，子元素设置display: table-cell;
+		vertical-align: middle;属性，很少这么用*/
+	.d1{
+		height: 50px;
+		display: table;
+	}
+	.s1{
+		display: table-cell;
+		vertical-align: middle;
+		width: 100px;
+	}
+	/*第二种方法 利用line-height属性，元素的高和line-height的高度相同，这种最常用*/
+	.d2{
+		height: 50px;	
+		line-height: 50px;	
+	}
+	/*第三种，不设置高度，利用padding将div撑起，上下padding一定要设置一样的数值*/
+	.d3{
+		padding: 17px 0;/*上下是17px 左右是0px，这个也比较常用*/
+	}
+</style>
+<body>
+	<div class="d1"><span class="s1">aaaaaa</span></div>
+	<div class="d2">aaaaaa</div>
+	<div class="d3">aaaaaa</div>
+</body>
+</html>
